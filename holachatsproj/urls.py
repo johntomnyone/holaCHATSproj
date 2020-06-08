@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^holachatsweb/',include('holachatsweb.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^profile/$', views.profile, name='profile'),
+    url(r'^privacy/$', views.privacy, name='privacy'),
     url('avatar/', include('avatar.urls')),
 ]
 

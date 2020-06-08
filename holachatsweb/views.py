@@ -70,7 +70,8 @@ def user_login(request):
 def profile(request):
 	return render(request, 'holachatsweb/profile.html', {})
 
-
+def privacy(request):
+	return render(request, 'holachatsweb/privacy.html', {})
 
 
 
