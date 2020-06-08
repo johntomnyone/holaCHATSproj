@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="live chat, chat support, live chat support assistance, holachats, hellochats, chat agents, customer chat agents">
+
+    <!--AOS Animate -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+    <!--Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!--Link to enternal stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+
+    <!--Favicon -->
+    <link rel="icon" type="icon/image" href="{% static 'imgs/holachats-just-logo.png' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <img src="{% static 'imgs/holachats-logo-text-2.png' %}" class="navbar-brand" href="#">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Hola<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#withoutLiveChat">Without Livechat</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Our Offer
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'index' %}#whatholaChatDelivers">24/7 LiveChat Support</a>
+              <a class="dropdown-item" href="{% url 'index' %}#howOuSolutionWorks">How It Works</a>
+              <!-- <div class="dropdown-divider"></div> -->
+              <a class="dropdown-item" href="{% url 'index' %}#keyBenefits">Key Benefits</a>
+              <a class="dropdown-item" href="{% url 'index' %}#keyBenefits">How It Helps</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HolaCHATS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'index' %}#aboutUs">About Us</a>
+              <a class="dropdown-item" href="#">Mission</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Vision</a>
+              <a class="dropdown-item" href="#">Roadmap</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#contactSales">Contact Sales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <div class="signup-border"></div>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign up <i class="fas fa-arrow-right ml-1"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+    <footer class="container">
+      <div class="row row-1">
+        <div class="col-lg col-md">
+          <h5>Why holaCHATS</h5>
+          <ul>
+            <li><a href="#">Customer Friendly</a></li>
+            <li><a href="#">Fast &amp; secured</a></li>
+            <li><a href="#">Customer Satisfaction</a></li>
+          </ul>
+        </div>
+        <div class="col-lg col-md">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#">Classic</a></li>
+            <li><a href="#">Premium</a></li>
+            <li><a href="#">Ultimate</a></li>
+          </ul>
+        </div>
+        <div class="col-lg col-md">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#">Chat Apps</a></li>
+            <li><a href="#">API Init</a></li>
+            <li><a href="#">Docs and Info</a></li>
+          </ul>
+        </div>
+        <div class="col-lg col-md">
+          <h5 id="demo">Contact us</h5>
+          <ul>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+        <div class="col-lg col-md">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row text-center m-5">
+        <div class="col-lg col-md">
+          <p>&copy; 2020 holaCHATS</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--Link to external js -->
+    <script src="{% static 'js/mainjs.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+  </script>
+  </body>
+</html>
