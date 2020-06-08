@@ -1,4 +1,7 @@
 import os
+import django_heroku
+import dj_database_url
+from decouple import config
 from . my_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -35,6 +38,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'holachatsproj.urls'
@@ -111,7 +115,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = MEDIA_DIR
 STATICFILES_DIRS = [STATIC_DIR,]
 LOGIN_URL = '/holachatsweb/user_login/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+django_heroku.settings(locals())
