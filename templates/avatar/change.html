@@ -1,0 +1,20 @@
+{% extends "avatar/change.html" %}
+
+{% load static %}
+{% load avatar_tags %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Avatar site admin') }}{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'imgs/holachats-just-logo.png' %}" height="40px" /><span style="font-weight: bold; padding-left: 20px;"> HolaCHATS Live Chats Support 
+    </a>
+    <a style="padding-left: 40px; color: #343a40" href="{% url 'index' %}"><img src="{% static 'imgs/home-solid.svg' %}" style="width: 30px"> Back to homepage</a>
+</h1>
+	{% include 'avatar/add.html' %}
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

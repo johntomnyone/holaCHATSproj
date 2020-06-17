@@ -70,19 +70,42 @@
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
+          {% if user.is_authenticated and user.is_staff %}
+
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}#contactSales">Contact Sales</a>
           </li>
+          {% endif %}
+
+          {% if user.is_authenticated %}
+          {% load avatar_tags %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{% url 'avatar_change' %}"><i>{% avatar user 30 class="rounded-circle img-responsive" id="user_avatar" %}</i> {{ user.first_name }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          </li>
+              {% if user.is_staff %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'admin:index' %}"><i class="fas fa-user-lock"></i> Admin</a>
+                </li>
+              {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'holachatsweb:user_login' %}">Login</a>
           </li>
           <div class="signup-border"></div>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign up <i class="fas fa-arrow-right ml-1"></i></a>
+            <a class="nav-link" href="{% url 'holachatsweb:register' %}">Sign up <i class="fas fa-arrow-right ml-1"></i></a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
